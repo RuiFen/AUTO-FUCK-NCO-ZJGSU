@@ -11,7 +11,7 @@ header = {
 
 users = os.environ["users"]
 
-users = json.loads(users)
+users = json.loads(json.dumps(users))
 
 print('当前时间：', datetime.datetime.now())
 
