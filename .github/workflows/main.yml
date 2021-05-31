@@ -1,10 +1,10 @@
 name: auto fuck nco jzgsu
 
 on:
-   push:
-   gollum:
-   schedule:
-       - cron: '30 0,16 * * *'
+  push:
+  gollum:
+  schedule:
+    - cron: '30 0,16 * * *'
 
   workflow_dispatch:
 
