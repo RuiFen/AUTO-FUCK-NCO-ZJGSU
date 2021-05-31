@@ -1,0 +1,11 @@
+setting.json
+venv
+.idea
+.vscode
+dist
+build
+test.py
+__pycache__
+*.jpg
+
+user.json
