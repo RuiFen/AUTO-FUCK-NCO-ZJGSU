@@ -23,14 +23,18 @@ for user in users:
         print(datetime.datetime.now().strftime('%Y-%m-%d'), '报送情况： *主动报送*')
         continue
     data = {}
-    for item in re.findall(R'<input.+?>', content):
-        key = re.search(R'name="(.+?)"', item).group(1)
-        value = re.search(R'value="(.*?)"', item).group(1)
-        check = re.search(R'checked', item)
-        if key not in data.keys():
-            data[key] = value
-        elif check is not None:
-            data[key] = value
+    try:
+        for item in re.findall(R'<input.+?>', content):
+            key = re.search(R'name="(.+?)"', item).group(1)
+            value = re.search(R'value="(.*?)"', item).group(1)
+            check = re.search(R'checked', item)
+            if key not in data.keys():
+                data[key] = value
+            elif check is not None:
+                data[key] = value
+    except:
+        print('出现错误，可能是账号密码不正确')
+        continue
     for item in re.findall(R'<textarea.+?>', content):
         key = re.search(R'name="(.+?)"', item).group(1)
         data[key] = ''
@@ -38,7 +42,7 @@ for user in users:
     # ---------------安全线-------------#
     data['uuid'] = str(uuid.uuid1())
     if('locationInfo' not in data):
-        data['locationInfo'] = '浙江省杭州市金沙港生活区'
+        data['locationInfo'] = '浙江省杭州市浙江工商大学金沙港生活区'
     # ---------------安全线-------------#
     res = s.post('https://nco.zjgsu.edu.cn/', data=data, headers=header)
     print(datetime.datetime.now().strftime('%Y-%m-%d'), '报送情况：', '报送成功' if
