@@ -21,7 +21,7 @@ for user in users:
     res = s.get('https://nco.zjgsu.edu.cn/', headers=header)
     content = str(res.content, encoding='utf-8')
     if re.search('当天已报送!', content):
-        print(datetime.datetime.now().strftime('%Y-%m-%d'), '学号尾号{}报送情况： *主动报送*'.format(user['name'][-4:]))
+        print(datetime.datetime.now().strftime('%Y-%m-%d'), '报送情况： *主动报送*')
         continue
     data = {}
     try:
@@ -34,7 +34,7 @@ for user in users:
             elif check is not None:
                 data[key] = value
     except:
-        print('学号尾号：{} 出现错误，可能是账号密码不正确'.format(user['name'][-4:]))
+        print('出现错误，可能是账号密码不正确')
         continue
     for item in re.findall(R'<textarea.+?>', content):
         key = re.search(R'name="(.+?)"', item).group(1)
