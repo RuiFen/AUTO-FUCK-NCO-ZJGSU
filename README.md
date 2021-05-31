@@ -2,6 +2,8 @@
 
 浙江工商大学 云战役 自动报送 Github全自动版
 
+其实已经不用签到了，这项目纯当学Actions了（摊手）
+
 魔改自[FUCK NCO ZJGSU](https://github.com/Hukeqing/FUCK-NCO-ZJGSU)。利用Github的Actions，让你不用准备任何东西，只需要白嫖微软的服务器，就能实现每天自动签到。
 
 默认设置凌晨十二点半和早八点各打卡一次。
