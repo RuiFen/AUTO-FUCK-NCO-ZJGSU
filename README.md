@@ -13,9 +13,8 @@
 2. 进入项目的设置，添加签到用户信息：
      - Settings -> Secrets -> New reponsitory secret
      - Name: users
-     - Value: 
+     - Value(example):
         ````Json
-        //Example
         [
             {
                 "name": "your_student_num",
