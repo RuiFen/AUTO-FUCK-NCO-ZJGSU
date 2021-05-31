@@ -30,7 +30,7 @@
 
 3. 进入Actions，允许运行
 
-4. 测试：修改[test_flag.txt](https://github.com/yujianke100/AUTO-FXCK-NCO-ZJGSU/test_flag.txt)，完成一次push。运行日志可见于Actions。
+4. 测试：随意修改[test_flag.txt](https://github.com/yujianke100/AUTO-FXCK-NCO-ZJGSU/blob/main/test_flag.txt)，完成一次push。运行日志可见于Actions。
 
 ## ~~本体不是我写的，出问题别打我，传送门再给你一次，打[hkq](https://github.com/Hukeqing/FUCK-NCO-ZJGSU)去。~~
 
