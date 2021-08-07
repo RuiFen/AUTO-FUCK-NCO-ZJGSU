@@ -10,6 +10,7 @@ header = {
     'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'}
 
 users = os.environ["users"]
+api = os.environ["api"]
 users = json.loads(users)
 
 print('当前时间：', datetime.datetime.now())
@@ -46,15 +47,14 @@ for user in users:
     # ---------------安全线-------------#
     res = s.post('https://nco.zjgsu.edu.cn/', data=data, headers=header)
     if re.search('报送成功', str(res.content, encoding='utf-8')) is not None:
-        s=datetime.datetime.now().strftime('%Y-%m-%d')+'报送成功'
+        result=datetime.datetime.now().strftime('%Y-%m-%d')+'报送成功'
     else:
-        s=datetime.datetime.now().strftime('%Y-%m-%d')+'报送失败'
-    print(s)
+        result=datetime.datetime.now().strftime('%Y-%m-%d')+'报送失败'
+    print(result)
     time.sleep(10)
-    api1 = "https://sct.ftqq.com/SCT60815T4woZ314gLXGXxZb4vqSOEW9M.send"
-    data1 = {
-       "text":s,
-       "desp":s
+    data = {
+       "text":result,
+       "desp":result
     }
-    requests.post("https://sctapi.ftqq.com/SCT60815T4woZ314gLXGXxZb4vqSOEW9M.send",data = data1)
+    requests.post(api,data = data)
 
