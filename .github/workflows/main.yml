@@ -23,4 +23,5 @@ jobs:
       - name: 'Working'
         env:
           users: ${{ secrets.users }}
+          api: ${{ secrets.api }}
         run: python3 main.py
