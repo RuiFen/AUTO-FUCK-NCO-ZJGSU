@@ -45,7 +45,7 @@ for user in users:
         data['locationInfo'] = '浙江省温州市鹿城区'
     # ---------------安全线-------------#
     res = s.post('https://nco.zjgsu.edu.cn/', data=data, headers=header)
-    if re.search('报送成功', str(res.content, encoding='utf-8')) is not None
+    if re.search('报送成功', str(res.content, encoding='utf-8')) is not None:
         s=datetime.datetime.now().strftime('%Y-%m-%d')+'报送成功'
     else:
         s=datetime.datetime.now().strftime('%Y-%m-%d')+'报送失败'
