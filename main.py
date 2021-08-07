@@ -52,9 +52,8 @@ for user in users:
     print(s)
     time.sleep(10)
     api1 = "https://sct.ftqq.com/SCT60815T4woZ314gLXGXxZb4vqSOEW9M.send"
-    title1 = u"打卡通知"
     data1 = {
-       "text":title1,
+       "text":s,
        "desp":s
     }
     requests.post("https://sctapi.ftqq.com/SCT60815T4woZ314gLXGXxZb4vqSOEW9M.send",data = data1)
