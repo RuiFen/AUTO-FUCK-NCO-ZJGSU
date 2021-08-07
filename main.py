@@ -55,6 +55,5 @@ for user in users:
        "text":title1,
        "desp":content1
     }
-    print(date1)
-    req = requests.post(api1,data = data1)
+    requests.post(api1,data = data1)
 
