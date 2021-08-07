@@ -48,13 +48,12 @@ for user in users:
     print(datetime.datetime.now().strftime('%Y-%m-%d'), '报送情况：', '报送成功' if
           re.search('报送成功', str(res.content, encoding='utf-8')) is not None else '报送失败！！！！！')
     time.sleep(10)
-    import requests
-    api = "https://sc.ftqq.com/{SCT60815T4woZ314gLXGXxZb4vqSOEW9M}.send"
-    title = u"打卡通知"
-    content = datetime.datetime.now().strftime('%Y-%m-%d'), '报送情况：', '报送成功' if re.search('报送成功', str(res.content, encoding='utf-8')) is not None else '报送失败！！！！！'
+    api1 = "https://sc.ftqq.com/{SCT60815T4woZ314gLXGXxZb4vqSOEW9M}.send"
+    title1 = u"打卡通知"
+    content1 = datetime.datetime.now().strftime('%Y-%m-%d'), '报送情况：', '报送成功' if re.search('报送成功', str(res.content, encoding='utf-8')) is not None else '报送失败！！！！！'
     data1 = {
-       "text":title,
-       "desp":content
+       "text":title1,
+       "desp":content1
     }
-    req = requests.post(api,data = data1)
+    req = requests.post(api1,data = data1)
 
