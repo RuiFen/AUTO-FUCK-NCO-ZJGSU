@@ -48,3 +48,13 @@ for user in users:
     print(datetime.datetime.now().strftime('%Y-%m-%d'), '报送情况：', '报送成功' if
           re.search('报送成功', str(res.content, encoding='utf-8')) is not None else '报送失败！！！！！')
     time.sleep(10)
+    import requests
+    api = "https://sc.ftqq.com/{YOUR-KEY}.send"
+    title = u"紧急通知"
+    content = datetime.datetime.now().strftime('%Y-%m-%d'), '报送情况：', '报送成功' if re.search('报送成功', str(res.content, encoding='utf-8')) is not None else '报送失败！！！！！'
+    data = {
+       "text":title,
+       "desp":content
+    }
+    req = requests.post(api,data = data)
+
