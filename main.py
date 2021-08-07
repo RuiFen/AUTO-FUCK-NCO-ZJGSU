@@ -42,14 +42,14 @@ for user in users:
     # ---------------安全线-------------#
     data['uuid'] = str(uuid.uuid1())
     if('locationInfo' not in data):
-        data['locationInfo'] = '浙江省杭州市浙江工商大学金沙港生活区'
+        data['locationInfo'] = '浙江省温州市鹿城区'
     # ---------------安全线-------------#
     res = s.post('https://nco.zjgsu.edu.cn/', data=data, headers=header)
     print(datetime.datetime.now().strftime('%Y-%m-%d'), '报送情况：', '报送成功' if
           re.search('报送成功', str(res.content, encoding='utf-8')) is not None else '报送失败！！！！！')
     time.sleep(10)
     import requests
-    api = "https://sc.ftqq.com/SCT60815T4woZ314gLXGXxZb4vqSOEW9M.send"
+    api = "https://sc.ftqq.com/{SCT60815T4woZ314gLXGXxZb4vqSOEW9M}.send"
     title = u"打卡通知"
     content = datetime.datetime.now().strftime('%Y-%m-%d'), '报送情况：', '报送成功' if re.search('报送成功', str(res.content, encoding='utf-8')) is not None else '报送失败！！！！！'
     data1 = {
