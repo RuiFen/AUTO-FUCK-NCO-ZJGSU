@@ -1,12 +1,10 @@
-name: auto fuck nco jzgsu
+name: Auto_Fuck_Nco_ZJGSU
 
 on:
-  push:
-  gollum:
+   workflow_dispatch:
+   gollum:
    schedule:
-     - cron: '30 0,16 * * *'
-
-  workflow_dispatch:
+       - cron: '30 0,3,16,22 * * *'
 
 jobs:
   build:
@@ -23,5 +21,4 @@ jobs:
       - name: 'Working'
         env:
           users: ${{ secrets.users }}
-          api: ${{ secrets.api }}
         run: python3 main.py
