@@ -10,7 +10,7 @@ header = {
     'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'}
 
 users = os.environ["users"]
-api = os.environ["api"]
+#api = os.environ["api"]
 users = json.loads(users)
 
 print('当前时间：', datetime.datetime.now())
@@ -56,5 +56,5 @@ for user in users:
        "text":result,
        "desp":result
     }
-    requests.post(api,data = data)
+    #requests.post(api,data = data)
 
