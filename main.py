@@ -40,7 +40,7 @@ for user in users:
         key = re.search(R'name="(.+?)"', item).group(1)
         data[key] = ''
     # 为了安全起见，这里还是推荐加上大致的地址和uuid值，虽然经过测试，不填写也可以正常使用
-    # ---------------安全线-------------#
+    # ---------------安全线-----------1--#
     data['uuid'] = str(uuid.uuid1())
     if('locationInfo' not in data):
         data['locationInfo'] = '浙江省温州市鹿城区'
